@@ -20,6 +20,17 @@ vim.opt.rtp:prepend(lazypath)
 
 local lazy_config = require "configs.lazy"
 
+vim.opt.viewoptions = { "folds", "cursor" }
+
+vim.api.nvim_create_autocmd("BufWinLeave", {
+    pattern = "*",
+    command = "silent! mkview",
+})
+
+vim.api.nvim_create_autocmd("BufWinEnter", {
+    pattern = "*",
+    command = "silent! loadview",
+})
 -- load plugins
 require("lazy").setup({
     {

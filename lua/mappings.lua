@@ -43,3 +43,9 @@ vim.keymap.set("n", "<D-/>", function()
     require("Comment.api").toggle.linewise.current()
     vim.cmd "normal! j"
 end, { desc = "Comment line and move down" })
+vim.keymap.set(
+    "n",
+    "gi",
+    vim.lsp.buf.implementation,
+    { desc = "Go to implementation" }
+)
