@@ -1,1 +1,2 @@
-text-selections.lua
+lua/plugins/text-selections.lua
+lazy-lock.json
