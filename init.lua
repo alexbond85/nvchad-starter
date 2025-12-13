@@ -21,7 +21,7 @@ vim.opt.rtp:prepend(lazypath)
 local lazy_config = require "configs.lazy"
 
 vim.opt.viewoptions = { "folds", "cursor" }
-
+vim.opt.scroll = 10 -- lines per C-d/C-u, default is half the window
 vim.api.nvim_create_autocmd("BufWinLeave", {
     pattern = "*",
     command = "silent! mkview",
