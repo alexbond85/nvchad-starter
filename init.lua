@@ -84,4 +84,11 @@ vim.api.nvim_create_autocmd("BufReadPost", {
         end
     end,
 })
+
+vim.filetype.add {
+    extension = {
+        jsonl = "json",
+    },
+}
+
 require "configs.custom"

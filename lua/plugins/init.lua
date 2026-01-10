@@ -4,7 +4,6 @@ return {
         event = "BufWritePre",
         opts = require "configs.conform",
     },
-
     {
         "folke/flash.nvim",
         event = "VeryLazy",
