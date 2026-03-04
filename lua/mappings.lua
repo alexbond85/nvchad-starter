@@ -51,3 +51,6 @@ vim.keymap.set(
     vim.lsp.buf.implementation,
     { desc = "Go to implementation" }
 )
+
+vim.keymap.set("n", "<C-a>", "ggVG", { desc = "Select all" })
+

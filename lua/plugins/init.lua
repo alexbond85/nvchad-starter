@@ -98,6 +98,27 @@ return {
         ft = { "markdown" },
         opts = {},
     },
+    {
+      "nvim-tree/nvim-tree.lua",
+      opts = {
+          on_attach = function(bufnr)
+              local api = require("nvim-tree.api")
+              api.config.mappings.default_on_attach(bufnr)
+
+              -- free s and o for flash
+              vim.keymap.del("n", "s", { buffer = bufnr })
+              vim.keymap.del("n", "o", { buffer = bufnr })
+
+              vim.keymap.set("n", "s", function()
+                  require("flash").jump()
+              end, { buffer = bufnr, desc = "Flash" })
+
+              vim.keymap.set("n", "o", function()
+                  require("flash").jump()
+              end, { buffer = bufnr, desc = "Flash" })
+          end,
+      },
+  },
     -- add neo tree
     -- {
     --     "nvim-neo-tree/neo-tree.nvim",
