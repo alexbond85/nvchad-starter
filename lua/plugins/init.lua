@@ -92,6 +92,12 @@ return {
             },
         },
     },
+    {
+        "MeanderingProgrammer/render-markdown.nvim",
+        dependencies = { "nvim-treesitter/nvim-treesitter" },
+        ft = { "markdown" },
+        opts = {},
+    },
     -- add neo tree
     -- {
     --     "nvim-neo-tree/neo-tree.nvim",
