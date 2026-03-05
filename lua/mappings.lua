@@ -54,3 +54,26 @@ vim.keymap.set(
 
 vim.keymap.set("n", "<C-a>", "ggVG", { desc = "Select all" })
 
+vim.keymap.set(
+    "n",
+    "<leader>gb",
+    ":Gitsigns blame_line<CR>",
+    { desc = "Git blame line" }
+)
+vim.keymap.set(
+    "n",
+    "<leader>gp",
+    ":Gitsigns preview_hunk<CR>",
+    { desc = "Git preview hunk" }
+)
+vim.keymap.set("n", "]h", ":Gitsigns next_hunk<CR>", { desc = "Next hunk" })
+vim.keymap.set("n", "[h", ":Gitsigns prev_hunk<CR>", { desc = "Prev hunk" })
+
+vim.keymap.set(
+    "n",
+    "<leader>gd",
+    ":DiffviewOpen main<CR>",
+    { desc = "Diff vs main" }
+)
+vim.keymap.set("n", "<leader>gD", ":DiffviewClose<CR>", { desc = "Close diff" })
+vim.keymap.set("n", "<leader>gB", ":Git blame<CR>", { desc = "Git blame file" })
