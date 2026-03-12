@@ -1,11 +1,12 @@
 local dap = require("dap")
 local dapui = require("dapui")
 
--- Setup DAP UI
-dapui.setup()
 
 -- Setup Python debugger
-require("dap-python").setup("python3")
+require("dap-python").setup("~/.virtualenvs/debugpy/bin/python")
+
+-- Setup DAP UI
+dapui.setup()
 
 -- Auto open/close UI
 dap.listeners.after.event_initialized["dapui_config"] = function()
