@@ -127,6 +127,24 @@ return {
         cmd = "Git",
     },
     { "sindrets/diffview.nvim", lazy = false },
+    -- lazygit
+    {
+        "kdheepak/lazygit.nvim",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        cmd = "LazyGit",
+        keys = {
+            { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
+        },
+    },
+
+    -- vifm
+    {
+        "vifm/vifm.vim",
+        cmd = { "Vifm", "SplitVifm", "VsplitVifm", "TabVifm" },
+        keys = {
+            { "<leader>vf", "<cmd>Vifm<cr>", desc = "Vifm" },
+        },
+    },
     -- add neo tree
     -- {
     --     "nvim-neo-tree/neo-tree.nvim",
