@@ -136,13 +136,11 @@ return {
             { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
         },
     },
-
-    -- vifm
     {
-        "vifm/vifm.vim",
-        cmd = { "Vifm", "SplitVifm", "VsplitVifm", "TabVifm" },
+        "voldikss/vim-floaterm",
         keys = {
-            { "<leader>vf", "<cmd>Vifm<cr>", desc = "Vifm" },
+            { "<leader>vf", "<cmd>FloatermNew vifm<cr>", desc = "Vifm" },
+            { "<leader>lg", "<cmd>FloatermNew lazygit<cr>", desc = "LazyGit" },
         },
     },
     -- add neo tree
