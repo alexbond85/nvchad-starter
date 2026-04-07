@@ -77,3 +77,22 @@ vim.keymap.set(
 )
 vim.keymap.set("n", "<leader>gD", ":DiffviewClose<CR>", { desc = "Close diff" })
 vim.keymap.set("n", "<leader>gB", ":Git blame<CR>", { desc = "Git blame file" })
+vim.keymap.set("n", "<leader>fd", function()
+    require("telescope.builtin").find_files {
+        find_command = { "fd", "--type", "d", "--hidden", "--exclude", ".git" },
+        prompt_title = "Find Directories",
+        attach_mappings = function(_, map)
+            local actions = require "telescope.actions"
+            local action_state = require "telescope.actions.state"
+
+            actions.select_default:replace(function(prompt_bufnr)
+                local selection = action_state.get_selected_entry()
+                actions.close(prompt_bufnr)
+                require("nvim-tree.api").tree.open()
+                require("nvim-tree.api").tree.find_file(selection.value)
+            end)
+
+            return true
+        end,
+    }
+end)
