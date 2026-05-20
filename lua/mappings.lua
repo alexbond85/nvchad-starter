@@ -96,3 +96,19 @@ vim.keymap.set("n", "<leader>fd", function()
         end,
     }
 end)
+vim.keymap.set("n", "<leader>ff", function()
+    require("telescope.builtin").find_files {
+        find_command = {
+            "fd",
+            "--type",
+            "f",
+            "--hidden",
+            "--exclude",
+            ".git",
+            "--exclude",
+            ".venv",
+            "--exclude",
+            ".virtualenv",
+        },
+    }
+end)
