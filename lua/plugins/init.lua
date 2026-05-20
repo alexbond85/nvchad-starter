@@ -127,6 +127,20 @@ return {
         cmd = "Git",
     },
     { "sindrets/diffview.nvim", lazy = false },
+    {
+        "pwntester/octo.nvim",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope.nvim",
+            "nvim-tree/nvim-web-devicons",
+        },
+        cmd = "Octo",
+        keys = {
+            { "<leader>op", "<cmd>Octo pr list<cr>", desc = "Octo: list PRs" },
+            { "<leader>or", "<cmd>Octo review start<cr>", desc = "Octo: start review" },
+        },
+        opts = {},
+    },
     -- lazygit
     {
         "kdheepak/lazygit.nvim",
