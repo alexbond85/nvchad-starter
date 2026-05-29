@@ -151,6 +151,11 @@ return {
         },
     },
     {
+        "sphamba/smear-cursor.nvim",
+        event = "VeryLazy",
+        opts = {},
+    },
+    {
         "voldikss/vim-floaterm",
         keys = {
             { "<leader>vf", "<cmd>FloatermNew vifm<cr>", desc = "Vifm" },
